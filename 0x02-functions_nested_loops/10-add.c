@@ -1,10 +1,11 @@
 #include "main.h"
 
-/*
- * add - this is an addiction of two int
- * @a : an integer value to be added
+/**
+ * add -> this is an addiction of two int
+ * @a: an integer value to be added
+ * @b: param 2
  *
- * Return: gives out the sum of the sum
+ * Return: a + b
  */
 
 int add(int a, int b)
