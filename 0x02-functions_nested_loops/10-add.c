@@ -7,6 +7,5 @@
 
 int main(void)
 {
-	return (int (a + b));
+	return ((int a) + (int b));
 }
-return (0);
