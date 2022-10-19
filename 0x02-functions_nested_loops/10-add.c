@@ -1,11 +1,17 @@
 #include "main.h"
 
 /*
- * main - this is an addiction of two int
- * return - gives out the sum of the sum
+ * add - this is an addiction of two int
+ * @a : an integer value to be added
+ *
+ * Return: gives out the sum of the sum
  */
 
-int main(void)
+int add(int a, int b)
 {
-	return ((int a) + (int b));
+	int a = a;
+	int b = b;
+
+	return (a + b);
+
 }
