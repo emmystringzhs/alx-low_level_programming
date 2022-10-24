@@ -1,13 +1,11 @@
 #include "main.h"
-/**
- * reset_to_98-> fuction to change a pointer 
- * 
- * @n: This is the entry
- * Return: return 0
- */
 
-void reset_to_958(int *n)
+/**
+ * reset_to_98 - takes a pointer
+ * @n: as int
+ * Return: void
+ */
+void reset_to_98(int *n)
 {
 	*n = 98;
-	
 }
