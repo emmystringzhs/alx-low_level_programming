@@ -4,9 +4,9 @@
  * Return: return 0
  */
 
-void 0-reset_to_98.c(int *n)
+void reset_to_98.c(int *n)
 {
-	*n = %98;
+	*n = 98;
 	
 	return *n;
 }
