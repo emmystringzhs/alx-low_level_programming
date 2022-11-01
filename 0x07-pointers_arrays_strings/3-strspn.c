@@ -1,30 +1,29 @@
 #include "main.h"
 
 /**
- * *_strspn - return the number of occurent of a string
- * @s: string to check
- * @accept: character to match
- * Return: int
- **/
-
+ * _strspn - length of a prefix substring
+ * @s: segment of bytes
+ * @accept: only bytes
+ * Return: the number of bytes in the initial segment of s
+ *which consist only of bytes from accept
+ */
 unsigned int _strspn(char *s, char *accept)
 {
-	int i, j, cmpt = 0;
+	int i, j;
+	int c = 0;
 
-	for (i = 0; s[i] >= '\0'; i++)
+	for (i = 0; s[i] != '\n'; i++)
 	{
-		for (j = 0; accept[j] > '\0'; j++)
+		if (s[i] != 32)
 		{
-			if (s[i] == accept[j])
+			for (j = 0; accept[j] != '\0'; j++)
 			{
-				cmpt++;
-				break;
+				if (s[i] == accept[j])
+					c++;
 			}
 		}
-		if (accept[j] == '\0')
-		{
-			break;
-		}
+		else
+			return (c);
 	}
-	return (cmpt);
+	return (c);
 }
