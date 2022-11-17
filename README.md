@@ -1,44 +1,61 @@
-0. Write a script that runs a C file through the preprocessor and save the result into another file.
+0. Write a function that fills memory with a constant byte.
 
-The C file name will be saved in the variable $CFILE
-The output should be saved in the file c
-1. Write a script that compiles a C file but does not link.
+Prototype: char *_memset(char *s, char b, unsigned int n);
+The _memset() function fills the first n bytes of the memory area pointed to by s with the constant byte b
+Returns a pointer to the memory area s
+FYI: The standard library provides a similar function: memset. Run man memset to learn more.
 
-The C file name will be saved in the variable $CFILE
-The output file should be named the same as the C file, but with the extension .o instead of .c.
-Example: if the C file is main.c, the output file should be main.o
-2. Write a script that generates the assembly code of a C code and save it in an output file.
+1. Write a function that copies memory area.
 
-The C file name will be saved in the variable $CFILE
-The output file should be named the same as the C file, but with the extension .s instead of .c.
-Example: if the C file is main.c, the output file should be main.s
-3. Write a script that compiles a C file and creates an executable named cisfun.
+Prototype: char *_memcpy(char *dest, char *src, unsigned int n);
+The _memcpy() function copies n bytes from memory area src to memory area dest
+Returns a pointer to dest
+FYI: The standard library provides a similar function: memcpy. Run man memcpy to learn more.
 
-The C file name will be saved in the variable $CFILE
-4. Write a C program that prints exactly "Programming is like building a multilingual puzzle, followed by a new line.
+2. Write a function that locates a character in a string.
 
-Use the function puts
-You are not allowed to use printf
-Your program should end with the value 0
-5. Write a C program that prints exactly with proper grammar, but the outcome is a piece of art,, followed by a new line.
+Prototype: char *_strchr(char *s, char c);
+Returns a pointer to the first occurrence of the character c in the string s, or NULL if the character is not found
+FYI: The standard library provides a similar function: strchr. Run man strchr to learn more.
 
-Use the function printf
-You are not allowed to use the function puts
-Your program should return 0
-Your program should compile without warning when using the -Wall gcc option
-6. Write a C program that prints the size of various types on the computer it is compiled and run on.
+3. Write a function that gets the length of a prefix substring.
 
-You should produce the exact same output as in the example
-Warnings are allowed
-Your program should return 0
-You might have to install the package libc6-dev-i386 on your Linux to test the -m32 gcc option
-7. Write a script that generates the assembly code (Intel syntax) of a C code and save it in an output file.
+Prototype: unsigned int _strspn(char *s, char *accept);
+Returns the number of bytes in the initial segment of s which consist only of bytes from accept
+FYI: The standard library provides a similar function: strspn. Run man strspn to learn more.
 
-The C file name will be saved in the variable $CFILE.
-The output file should be named the same as the C file, but with the extension .s instead of .c.
-Example: if the C file is main.c, the output file should be main.s
-8. Write a C program that prints exactly and that piece of art is useful" - Dora Korpar, 2015-10-19, followed by a new line, to the standard error.
+4. Write a function that searches a string for any of a set of bytes.
 
-You are not allowed to use any functions listed in the NAME section of the man (3) printf or man (3) puts
-Your program should return 1
-Your program should compile without any warnings when using the -Wall gcc option
+Prototype: char *_strpbrk(char *s, char *accept);
+The _strpbrk() function locates the first occurrence in the string s of any of the bytes in the string accept
+Returns a pointer to the byte in s that matches one of the bytes in accept, or NULL if no such byte is found
+FYI: The standard library provides a similar function: strpbrk. Run man strpbrk to learn more.
+
+5. Write a function that locates a substring.
+
+Prototype: char *_strstr(char *haystack, char *needle);
+The _strstr() function finds the first occurrence of the substring needle in the string haystack. The terminating null bytes (\0) are not compared
+Returns a pointer to the beginning of the located substring, or NULL if the substring is not found.
+FYI: The standard library provides a similar function: strstr. Run man strstr to learn more.
+
+6. Write a function that prints the chessboard.
+
+Prototype: void print_chessboard(char (*a)[8]);
+
+7. Write a function that prints the sum of the two diagonals of a square matrix of integers.
+
+Prototype: void print_diagsums(int *a, int size);
+Format: see example
+You are allowed to use the standard library
+Note that in the following example we are casting an int[][] into an int*. This is not something you should do. The goal here is to make sure you understand how an array of array is stored in memory
+
+8. Write a function that sets the value of a pointer to a char.
+
+Prototype: void set_string(char **s, char *to);
+
+9. Create a file that contains the password for the crackme2 executable.
+
+Your file should contain the exact password, no new line, no extra space
+ltrace, ldd, gdb and objdump can help
+You may need to install the openssl library to run the crakme2 program: sudo apt install libssl-dev
+Edit the source list sudo nano /etc/apt/sources.list to add the following line: deb http://security.ubuntu.com/ubuntu xenial-security main Then sudo apt update and sudo apt install libssl1.0.0
