@@ -1,11 +1,11 @@
 #include "lists.h"
 
 /**
- * free_list - frees a list
+ * free_list - frees alist
  * @head: head of the linked list
- *
- * Return: void
+ * Return: no return
  */
+
 void free_list(list_t *head)
 {
 	list_t *current;
